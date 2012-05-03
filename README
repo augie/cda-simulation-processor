@@ -1,0 +1,18 @@
+Set of programs which ultimately produce a reduced-variance payoff matrix from samples of a continuous double auction (CDA) simulation.
+
+The pipeline works as follows:
+ - GatherResults: collects simulation samples from the Michigan CAEN Advanced Computing cluster. The collected samples are available in /data/samples.zip. It's ~750MB unzipped.
+ - CalculateAverageNormalizedUnitValue: name says it all.
+ - CalculateAveragePayoffPerStratPerProf: average payoff per strategy per profile.
+ - CalculateCoefficients: the 10 variance reduction coefficients from the average normalized unit values and average payoffs per strategy per profile.
+ - CalculateRedVarAvgPayoffPerStratPerProf: produces a payoff matrix which can then be analyzed by an external game analysis script
+ - CalculateVarianceReductionRatio: by how much was variance reduced?
+
+The ConvertPayoffMatrix script is used to convert the results of the original study to the format used by the game analysis script.
+
+A detailed explanation of the variance reduction process is available in report.pdf.
+
+The source code for the CDA simulator which produced the samples is available at https://github.com/augie/cda-simulator
+
+The produced JSON payoff matrix is analyzed using the game analysis script available on GitHub at https://github.com/egtaonline/GameAnalysis
+
