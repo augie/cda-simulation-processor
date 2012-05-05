@@ -4,7 +4,7 @@ The pipeline works as follows:
  - GatherResults: collects simulation samples from the Michigan CAEN Advanced Computing cluster. The collected samples are available in /data/samples.zip. It's ~750MB unzipped.
  - CalculateAverageNormalizedUnitValue: name says it all.
  - CalculateAveragePayoffPerStratPerProf: average payoff per strategy per profile.
- - CalculateCoefficients: the 10 variance reduction coefficients from the average normalized unit values and average payoffs per strategy per profile.
+ - CalculateCoefficients: the 10 control variate coefficients from the average normalized unit values and average payoffs per strategy per profile.
  - CalculateRedVarAvgPayoffPerStratPerProf: produces a payoff matrix which can then be analyzed by an external game analysis script
  - CalculateVarianceReductionRatio: by how much was variance reduced?
 
