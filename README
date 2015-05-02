@@ -1,5 +1,7 @@
 Set of programs which ultimately produce a reduced-variance payoff matrix from samples of a continuous double auction (CDA) simulation.
 
+For additional background, see http://augiehill.com/blog/cda-strategies
+
 The pipeline works as follows:
  - GatherResults: collects simulation samples from the Michigan CAEN Advanced Computing cluster. The collected samples are available in /data/samples.zip. It's ~750MB unzipped.
  - CalculateAverageNormalizedUnitValue: name says it all.
